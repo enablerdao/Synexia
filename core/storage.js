@@ -235,7 +235,11 @@ class BlockchainStorage {
   async getValidators() {
     try {
       const validatorsArray = await this.metadataBucket.get('validators');
-      return new Map(validatorsArray);
+      // 配列が存在し、かつ配列である場合のみMapに変換
+      if (validatorsArray && Array.isArray(validatorsArray)) {
+        return new Map(validatorsArray);
+      }
+      return new Map();
     } catch (error) {
       if (error.code === 'LEVEL_NOT_FOUND') {
         return new Map();

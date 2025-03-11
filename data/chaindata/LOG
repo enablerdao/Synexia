@@ -1,1 +1,5 @@
-2025/03/11-12:10:45.613773 ffff9fc0f060 Delete type=3 #1
+2025/03/11-13:13:54.930355 ffff6d40f060 Recovering log #3
+2025/03/11-13:13:54.930617 ffff6d40f060 Level-0 table #5: started
+2025/03/11-13:13:54.959704 ffff6d40f060 Level-0 table #5: 1438 bytes OK
+2025/03/11-13:13:54.966097 ffff6d40f060 Delete type=3 #2
+2025/03/11-13:13:54.966317 ffff6d40f060 Delete type=0 #3
