@@ -1,0 +1,22 @@
+ブロックチェーンが 1 ブロックで初期化されました
+0 個のウォレットをストレージから読み込みました
+管理者ウォレットの残高を 10000 に設定しました
+PoSが 0 バリデーターとエポック 0 で初期化されました
+ハイブリッドコンセンサスが初期化されました
+トークンコントラクトのデプロイエラー: Error: 署名がありません
+    at Transaction.isValid (/workspace/synexia-v2/core/transaction.js:101:13)
+    at Blockchain.addTransaction (/workspace/synexia-v2/core/blockchain.js:208:22)
+    at async WasmEngine.deployContract (/workspace/synexia-v2/contracts/wasm-engine.js:122:5)
+    at async BlockchainServer.initialize (/workspace/synexia-v2/api/server.js:149:38)
+    at async BlockchainServer.start (/workspace/synexia-v2/api/server.js:189:5)
+    at async startServer (/workspace/synexia-v2/index.js:23:5)
+ブロックチェーンサーバーが正常に初期化されました
+Synexiaブロックチェーンサーバーが http://localhost:56383 で実行中
+Ctrl+Cでサーバーを停止
+ブロックチェーンサーバーがポート 56383 で実行中
+ブロック 1 がマイニングされました: 0067f338902f8294695b9be3e51505d2fc852f5e835f884f476e7310d11fb796
+コントラクト 449db80c38686d5f9073283cf1ee8f7d0862a65fd38f09cdf36d1748aa615d68.balanceOf の実行エラー: Error: 署名がありません
+    at Transaction.isValid (/workspace/synexia-v2/core/transaction.js:101:13)
+    at Blockchain.addTransaction (/workspace/synexia-v2/core/blockchain.js:208:22)
+    at async WasmEngine.executeContract (/workspace/synexia-v2/contracts/wasm-engine.js:229:7)
+    at async BlockchainServer.executeContract (/workspace/synexia-v2/api/server.js:704:22)

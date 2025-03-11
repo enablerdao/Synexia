@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Synexia Blockchain</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="#" class="logo">Synexia Blockchain</a>
+      </div>
+      <div class="navbar-menu">
+        <ul>
+          <li><a href="#" data-page="blockchain" class="active">Blockchain</a></li>
+          <li><a href="#" data-page="wallets">Wallets</a></li>
+          <li><a href="#" data-page="transactions">Transactions</a></li>
+          <li><a href="#" data-page="smart-contracts">Smart Contracts</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="content">
+      <!-- ブロックチェーンページ -->
+      <div class="page" id="blockchain-page">
+        <div class="dashboard">
+          <div class="dashboard-cards">
+            <div class="dashboard-card">
+              <div class="card-content">
+                <h3>Height</h3>
+                <p id="blockchain-height">0</p>
+              </div>
+            </div>
+            <div class="dashboard-card">
+              <div class="card-content">
+                <h3>Transactions</h3>
+                <p id="blockchain-transactions">0</p>
+              </div>
+            </div>
+            <div class="dashboard-card">
+              <div class="card-content">
+                <h3>Validators</h3>
+                <p id="blockchain-validators">0</p>
+              </div>
+            </div>
+            <div class="dashboard-card">
+              <div class="card-content">
+                <h3>Pending Tx</h3>
+                <p id="blockchain-pending">0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>Blocks</h2>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Height</th>
+                  <th>Hash</th>
+                  <th>Timestamp</th>
+                  <th>Transactions</th>
+                  <th>Validator</th>
+                </tr>
+              </thead>
+              <tbody id="blocks-table">
+                <!-- ブロックデータがここに入ります -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>Mine New Blocks</h2>
+          <div class="form-section">
+            <div class="form-group">
+              <label>Miner Wallet</label>
+              <select id="miner-wallet">
+                <!-- ウォレットオプションがここに入ります -->
+              </select>
+            </div>
+            <button id="mine-button" class="btn primary">Mine Blocks</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- ウォレットページ -->
+      <div class="page" id="wallets-page" style="display: none;">
+        <div class="grid-container">
+          <div class="grid-item">
+            <div class="section">
+              <h2>Create Wallet</h2>
+              <div class="form-section">
+                <div class="form-group">
+                  <label for="wallet-name">Wallet Name</label>
+                  <input type="text" id="wallet-name" required>
+                </div>
+                <button id="create-wallet-button" class="btn primary">Create Wallet</button>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="section">
+              <h2>Stake Tokens</h2>
+              <div class="form-section">
+                <div class="form-group">
+                  <label>Wallet</label>
+                  <select id="stake-wallet">
+                    <!-- ウォレットオプションがここに入ります -->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="stake-amount">Amount</label>
+                  <input type="number" id="stake-amount" min="1000" required>
+                  <div class="help-text">Minimum stake: 1000 tokens</div>
+                </div>
+                <button id="stake-button" class="btn primary">Stake Tokens</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>Wallets</h2>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Public Key</th>
+                  <th>Balance</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="wallets-table">
+                <!-- ウォレットデータがここに入ります -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+      <!-- トランザクションページ -->
+      <div class="page" id="transactions-page" style="display: none;">
+        <div class="section">
+          <h2>Create Transaction</h2>
+          <div class="form-section">
+            <div class="form-group">
+              <label>From</label>
+              <select id="tx-from-wallet">
+                <!-- ウォレットオプションがここに入ります -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label>To</label>
+              <select id="tx-to-wallet">
+                <!-- ウォレットオプションがここに入ります -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="tx-amount">Amount</label>
+              <input type="number" id="tx-amount" min="1" required>
+            </div>
+            <div class="form-group">
+              <label for="tx-data">Data (Optional)</label>
+              <input type="text" id="tx-data">
+            </div>
+            <button id="create-tx-button" class="btn primary">Create Transaction</button>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>Pending Transactions</h2>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Amount</th>
+                  <th>Data</th>
+                  <th>Timestamp</th>
+                </tr>
+              </thead>
+              <tbody id="pending-transactions-table">
+                <!-- 保留中のトランザクションデータがここに入ります -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+      <!-- スマートコントラクトページ -->
+      <div class="page" id="smart-contracts-page" style="display: none;">
+        <div class="grid-container">
+          <div class="grid-item">
+            <div class="section">
+              <h2>Deploy Contract</h2>
+              <div class="form-section">
+                <div class="form-group">
+                  <label>Owner Wallet</label>
+                  <select id="contract-owner-wallet">
+                    <!-- ウォレットオプションがここに入ります -->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="contract-code">Contract Code</label>
+                  <textarea id="contract-code" rows="10" required></textarea>
+                </div>
+                <button id="deploy-contract-button" class="btn primary">Deploy Contract</button>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="section">
+              <h2>Execute Contract</h2>
+              <div class="form-section">
+                <div class="form-group">
+                  <label>Contract</label>
+                  <select id="execute-contract">
+                    <!-- コントラクトオプションがここに入ります -->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Caller Wallet</label>
+                  <select id="contract-caller-wallet">
+                    <!-- ウォレットオプションがここに入ります -->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="contract-method">Method</label>
+                  <input type="text" id="contract-method" required>
+                </div>
+                <div class="form-group">
+                  <label for="contract-params">Parameters (JSON)</label>
+                  <textarea id="contract-params" rows="5"></textarea>
+                </div>
+                <button id="execute-contract-button" class="btn primary">Execute Contract</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>Contracts</h2>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Address</th>
+                  <th>Owner</th>
+                  <th>Code Size</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="contracts-table">
+                <!-- コントラクトデータがここに入ります -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- トースト通知 -->
+  <div id="toast" class="toast">
+    <div class="toast-header">
+      <strong id="toast-title"></strong>
+      <button id="toast-close" class="close-button">&times;</button>
+    </div>
+    <div id="toast-message" class="toast-body"></div>
+  </div>
+  
+  <!-- ローディングスピナー -->
+  <div id="loading-overlay" class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+  
+  <script src="js/app.js"></script>
+</body>
+</html>

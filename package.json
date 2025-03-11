@@ -1,0 +1,33 @@
+{
+  "name": "synexia-blockchain",
+  "version": "1.0.0",
+  "description": "Synexia - 次世代ブロックチェーンプラットフォーム",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "blockchain",
+    "cryptocurrency",
+    "pos",
+    "dag",
+    "smart-contracts"
+  ],
+  "author": "Synexia Team",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "elliptic": "^6.5.4",
+    "express": "^4.18.2",
+    "level": "^8.0.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22"
+  }
+}
