@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景グラデーション -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0073e6" />
+      <stop offset="100%" stop-color="#00c9a7" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#00000033" />
+    </filter>
+    <clipPath id="circleClip">
+      <circle cx="100" cy="100" r="90" />
+    </clipPath>
+  </defs>
+
+  <!-- 背景円 -->
+  <circle cx="100" cy="100" r="90" fill="url(#bgGradient)" filter="url(#shadow)" />
+  
+  <!-- 背景パターン -->
+  <g clip-path="url(#circleClip)" opacity="0.1">
+    <path d="M0,0 L200,200" stroke="#ffffff" stroke-width="1" />
+    <path d="M20,0 L220,200" stroke="#ffffff" stroke-width="1" />
+    <path d="M40,0 L240,200" stroke="#ffffff" stroke-width="1" />
+    <path d="M60,0 L260,200" stroke="#ffffff" stroke-width="1" />
+    <path d="M80,0 L280,200" stroke="#ffffff" stroke-width="1" />
+    <path d="M100,0 L300,200" stroke="#ffffff" stroke-width="1" />
+    <path d="M120,0 L320,200" stroke="#ffffff" stroke-width="1" />
+    <path d="M140,0 L340,200" stroke="#ffffff" stroke-width="1" />
+    <path d="M160,0 L360,200" stroke="#ffffff" stroke-width="1" />
+    <path d="M180,0 L380,200" stroke="#ffffff" stroke-width="1" />
+    <path d="M200,0 L400,200" stroke="#ffffff" stroke-width="1" />
+  </g>
+
+  <!-- DAGシンボル（有向非循環グラフ） -->
+  <g transform="translate(100, 100)">
+    <!-- メインノード -->
+    <circle cx="0" cy="0" r="35" fill="#ffffff" stroke="#ffffff" stroke-width="2" opacity="0.95" filter="url(#shadow)" />
+    
+    <!-- 接続ノード -->
+    <circle cx="45" cy="-45" r="20" fill="#ffffff" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+    <circle cx="45" cy="45" r="20" fill="#ffffff" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+    <circle cx="-45" cy="-45" r="20" fill="#ffffff" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+    <circle cx="-45" cy="45" r="20" fill="#ffffff" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+    
+    <!-- エッジ（接続線） -->
+    <line x1="0" y1="0" x2="45" y2="-45" stroke="#ffffff" stroke-width="3" />
+    <line x1="0" y1="0" x2="45" y2="45" stroke="#ffffff" stroke-width="3" />
+    <line x1="0" y1="0" x2="-45" y2="-45" stroke="#ffffff" stroke-width="3" />
+    <line x1="0" y1="0" x2="-45" y2="45" stroke="#ffffff" stroke-width="3" />
+    
+    <!-- 中央のシンボル -->
+    <text x="0" y="12" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#0073e6" text-anchor="middle">S</text>
+  </g>
+  
+  <!-- 外側の円 -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.5" />
+</svg>

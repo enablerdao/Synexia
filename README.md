@@ -1,5 +1,9 @@
 # Synexia Blockchain
 
+<div align="center">
+  <img src="public/images/synexia-logo-jp.svg" alt="Synexia Logo" width="600">
+</div>
+
 Synexiaは次世代のレイヤー1ブロックチェーンプラットフォームです。PoS（Proof of Stake）とDAG（有向非循環グラフ）を組み合わせたハイブリッドコンセンサスメカニズムを採用し、高いスケーラビリティと安全性を実現しています。
 
 ## 主な特徴

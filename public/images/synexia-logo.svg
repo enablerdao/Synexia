@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="500" height="150" viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景グラデーション -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db" />
+      <stop offset="100%" stop-color="#2ecc71" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2c3e50" />
+      <stop offset="100%" stop-color="#34495e" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- ブロックチェーンシンボル -->
+  <g transform="translate(50, 75)">
+    <!-- 中央の六角形 -->
+    <polygon points="0,-40 34.64,-20 34.64,20 0,40 -34.64,20 -34.64,-20" 
+             fill="url(#logoGradient)" stroke="#fff" stroke-width="2" />
+    
+    <!-- 接続線 -->
+    <line x1="34.64" y1="-20" x2="60" y2="-35" stroke="#3498db" stroke-width="2" />
+    <line x1="34.64" y1="20" x2="60" y2="35" stroke="#3498db" stroke-width="2" />
+    <line x1="-34.64" y1="-20" x2="-60" y2="-35" stroke="#3498db" stroke-width="2" />
+    <line x1="-34.64" y1="20" x2="-60" y2="35" stroke="#3498db" stroke-width="2" />
+    
+    <!-- 周囲の小さな六角形 -->
+    <polygon points="60,-35 74.64,-25 74.64,-5 60,5 45.36,-5 45.36,-25" 
+             fill="#3498db" stroke="#fff" stroke-width="1.5" opacity="0.8" />
+    <polygon points="60,35 74.64,25 74.64,5 60,-5 45.36,5 45.36,25" 
+             fill="#2ecc71" stroke="#fff" stroke-width="1.5" opacity="0.8" />
+    <polygon points="-60,-35 -45.36,-25 -45.36,-5 -60,5 -74.64,-5 -74.64,-25" 
+             fill="#2ecc71" stroke="#fff" stroke-width="1.5" opacity="0.8" />
+    <polygon points="-60,35 -45.36,25 -45.36,5 -60,-5 -74.64,5 -74.64,25" 
+             fill="#3498db" stroke="#fff" stroke-width="1.5" opacity="0.8" />
+    
+    <!-- 中央のノード -->
+    <circle cx="0" cy="0" r="10" fill="#fff" filter="url(#glow)" />
+  </g>
+
+  <!-- テキスト部分 -->
+  <g transform="translate(180, 85)">
+    <!-- Synexia テキスト -->
+    <text font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="url(#textGradient)">
+      SYNEXIA
+    </text>
+    
+    <!-- タグライン -->
+    <text font-family="Arial, sans-serif" font-size="16" fill="#7f8c8d" x="5" y="30">
+      Next Generation Blockchain
+    </text>
+  </g>
+
+  <!-- 装飾的な要素 -->
+  <path d="M180,95 L170,95" stroke="#3498db" stroke-width="2" />
+  <path d="M180,95 L180,105" stroke="#2ecc71" stroke-width="2" />
+</svg>

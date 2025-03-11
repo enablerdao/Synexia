@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="500" height="150" viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景グラデーション -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0073e6" />
+      <stop offset="100%" stop-color="#00c9a7" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a2a3a" />
+      <stop offset="100%" stop-color="#2a3a4a" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#00000033" />
+    </filter>
+  </defs>
+
+  <!-- DAGシンボル（有向非循環グラフ） -->
+  <g transform="translate(60, 75)">
+    <!-- メインノード -->
+    <circle cx="0" cy="0" r="25" fill="url(#logoGradient)" stroke="#fff" stroke-width="2" filter="url(#shadow)" />
+    
+    <!-- 接続ノード -->
+    <circle cx="50" cy="-30" r="15" fill="#0073e6" stroke="#fff" stroke-width="1.5" opacity="0.9" />
+    <circle cx="50" cy="30" r="15" fill="#00a5e0" stroke="#fff" stroke-width="1.5" opacity="0.9" />
+    <circle cx="-50" cy="-30" r="15" fill="#00a5e0" stroke="#fff" stroke-width="1.5" opacity="0.9" />
+    <circle cx="-50" cy="30" r="15" fill="#00c9a7" stroke="#fff" stroke-width="1.5" opacity="0.9" />
+    
+    <!-- エッジ（接続線） -->
+    <line x1="0" y1="0" x2="50" y2="-30" stroke="#0073e6" stroke-width="2" />
+    <line x1="0" y1="0" x2="50" y2="30" stroke="#00a5e0" stroke-width="2" />
+    <line x1="0" y1="0" x2="-50" y2="-30" stroke="#00a5e0" stroke-width="2" />
+    <line x1="0" y1="0" x2="-50" y2="30" stroke="#00c9a7" stroke-width="2" />
+    
+    <!-- 小さなノード -->
+    <circle cx="70" cy="-45" r="8" fill="#0073e6" stroke="#fff" stroke-width="1" opacity="0.7" />
+    <circle cx="70" cy="45" r="8" fill="#00c9a7" stroke="#fff" stroke-width="1" opacity="0.7" />
+    <circle cx="-70" cy="-45" r="8" fill="#00a5e0" stroke="#fff" stroke-width="1" opacity="0.7" />
+    <circle cx="-70" cy="45" r="8" fill="#00c9a7" stroke="#fff" stroke-width="1" opacity="0.7" />
+    
+    <!-- 追加の接続線 -->
+    <line x1="50" y1="-30" x2="70" y2="-45" stroke="#0073e6" stroke-width="1.5" opacity="0.7" />
+    <line x1="50" y1="30" x2="70" y2="45" stroke="#00a5e0" stroke-width="1.5" opacity="0.7" />
+    <line x1="-50" y1="-30" x2="-70" y2="-45" stroke="#00a5e0" stroke-width="1.5" opacity="0.7" />
+    <line x1="-50" y1="30" x2="-70" y2="45" stroke="#00c9a7" stroke-width="1.5" opacity="0.7" />
+    
+    <!-- 中央のシンボル -->
+    <text x="0" y="7" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff" text-anchor="middle">S</text>
+  </g>
+
+  <!-- テキスト部分 -->
+  <g transform="translate(150, 85)" filter="url(#shadow)">
+    <!-- Synexia テキスト -->
+    <text font-family="'Segoe UI', Arial, sans-serif" font-size="48" font-weight="bold" fill="url(#textGradient)" letter-spacing="1">
+      SYNEXIA
+    </text>
+    
+    <!-- 日本語タグライン -->
+    <text font-family="'Hiragino Kaku Gothic Pro', 'MS Gothic', sans-serif" font-size="16" fill="#5a6a7a" x="5" y="30">
+      次世代のレイヤー1ブロックチェーン
+    </text>
+  </g>
+
+  <!-- 装飾的な要素 -->
+  <path d="M150,95 L140,95" stroke="#0073e6" stroke-width="2" />
+  <path d="M150,95 L150,105" stroke="#00c9a7" stroke-width="2" />
+  
+  <!-- 背景の装飾 -->
+  <g opacity="0.05">
+    <path d="M0,0 L500,150" stroke="#0073e6" stroke-width="1" />
+    <path d="M0,30 L500,180" stroke="#0073e6" stroke-width="1" />
+    <path d="M0,60 L500,210" stroke="#0073e6" stroke-width="1" />
+    <path d="M0,90 L500,240" stroke="#00a5e0" stroke-width="1" />
+    <path d="M0,120 L500,270" stroke="#00a5e0" stroke-width="1" />
+    <path d="M0,150 L500,300" stroke="#00c9a7" stroke-width="1" />
+  </g>
+</svg>
